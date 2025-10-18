@@ -19,7 +19,13 @@ int	ft_strchr_len(const char *s, int c)
 	count = 0;
 	if (!s)
 		return (-1);
-	while (s[count - 1] || count == 0)
+	if (c == '\0')
+	{
+		while (s[count])
+			count++;
+		return (count);
+	}
+	while (s[count])
 	{
 		if (s[count] == (char)c)
 			return (count);
