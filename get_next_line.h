@@ -6,7 +6,7 @@
 /*   By: natakaha <natakaha@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 07:34:20 by natakaha          #+#    #+#             */
-/*   Updated: 2025/10/16 09:15:41 by natakaha         ###   ########.fr       */
+/*   Updated: 2025/10/20 13:46:42 by natakaha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 # include <unistd.h>
 # include <fcntl.h>
 
-int	ft_strchr_len(const char *s, int c);
-char *ft_strjoin(char const *s1, char const *s2);
+int		ft_strchr_len(const char *s, int c);
+char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strndup(const char *str, size_t n);
 char	*ft_strdup(const char *str);
 char	*exec_before_n(char	*str);

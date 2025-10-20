@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*    get_next_line_utils.c                             :+:      :+:    :+:   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: natakaha <natakaha@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 07:34:17 by natakaha          #+#    #+#             */
-/*   Updated: 2025/10/16 07:34:18 by natakaha         ###   ########.fr       */
+/*   Updated: 2025/10/20 13:45:48 by natakaha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,11 @@ int	ft_strchr_len(const char *s, int c)
 	return (-1);
 }
 
-char *ft_strjoin(char const *s1, char const *s2)
+static char	*allocate_char(char const *s1, char const *s2, char *joinstr);
+
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	total_len;
-	size_t	s1_count;
-	size_t	s2_count;
 	char	*joinstr;
 
 	if (!s1)
@@ -49,7 +49,17 @@ char *ft_strjoin(char const *s1, char const *s2)
 	joinstr = (char *)malloc(sizeof(char) * total_len);
 	if (joinstr == NULL)
 		return (NULL);
-	s1_count = 0, s2_count = 0;
+	joinstr = allocate_char(s1, s2, joinstr);
+	return (joinstr);
+}
+
+static char	*allocate_char(char const *s1, char const *s2, char *joinstr)
+{
+	size_t	s1_count;
+	size_t	s2_count;
+
+	s1_count = 0;
+	s2_count = 0;
 	while (s1[s1_count])
 	{
 		joinstr[s1_count + s2_count] = s1[s1_count];
