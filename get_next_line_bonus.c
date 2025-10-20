@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: natakaha <natakaha@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 07:34:14 by natakaha          #+#    #+#             */
-/*   Updated: 2025/10/20 21:30:17 by natakaha         ###   ########.fr       */
+/*   Updated: 2025/10/20 21:31:32 by natakaha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,20 +71,20 @@ char	*read_extend_str(int fd, char *str)
 
 char	*get_next_line(int fd)
 {
-	static char	*str;
+	static char	*str[1024];
 	char		*display;
 
 	if (fd == -1 || BUFFER_SIZE == 0)
 		return (NULL);
-	if (ft_strchr_len(str, '\n') >= 0)
+	if (ft_strchr_len(str[fd], '\n') >= 0)
 	{
-		display = exec_before_n(str);
-		str = proceed_after_n(str);
+		display = exec_before_n(str[fd]);
+		str[fd] = proceed_after_n(str[fd]);
 		return (display);
 	}
-	str = read_extend_str(fd, str);
-	display = exec_before_n(str);
-	str = proceed_after_n(str);
+	str[fd] = read_extend_str(fd, str[fd]);
+	display = exec_before_n(str[fd]);
+	str[fd] = proceed_after_n(str[fd]);
 	return (display);
 }
 

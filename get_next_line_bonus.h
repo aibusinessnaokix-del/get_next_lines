@@ -1,23 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: natakaha <natakaha@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 07:34:20 by natakaha          #+#    #+#             */
-/*   Updated: 2025/10/20 20:19:42 by natakaha         ###   ########.fr       */
+/*   Updated: 2025/10/20 15:05:04 by natakaha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-
-# ifndef BUFFER_SIZE
-
-#  define BUFFER_SIZE 42
-
-# endif
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 
 # include <stdlib.h>
 # include <unistd.h>
@@ -31,7 +25,5 @@ char	*ft_strdup(const char *str);
 char	*exec_before_n(char	*str);
 char	*proceed_after_n(char	*str);
 char	*get_next_line(int fd);
-
-
 
 #endif

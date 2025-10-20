@@ -6,7 +6,7 @@
 /*   By: natakaha <natakaha@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 07:34:17 by natakaha          #+#    #+#             */
-/*   Updated: 2025/10/20 20:35:52 by natakaha         ###   ########.fr       */
+/*   Updated: 2025/10/20 13:45:48 by natakaha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	total_len;
 	char	*joinstr;
 
-	if (!s1 && !s2)
-		return (NULL);
 	if (!s1)
 		return (ft_strdup(s2));
 	if (!s2)
